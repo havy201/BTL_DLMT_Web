@@ -17,7 +17,6 @@ function formatDateVN(dateStr) {
 }
 
 function App() {
-  const [activeTab, setActiveTab] = useState('today')
   const [tempUnit, setTempUnit] = useState('C')
   const [temperature1, setTemperature1] = useState(null)
   const [currentTime, setCurrentTime] = useState(new Date())
@@ -113,11 +112,6 @@ function App() {
     setTempUnit(unit);
   };
 
-  const formatDate = (date) => {
-    const options = { month: 'short', day: 'numeric', year: 'numeric' };
-    return date.toLocaleDateString('en-US', options);
-  };
-
   const formatTime = (date) => {
     const options = { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true };
     return date.toLocaleTimeString('en-US', options);
@@ -126,12 +120,6 @@ function App() {
   const updateLightbulbStatus = async (isOn) => {
     setLightbulbActive(isOn);
     await getDataApi.updateLightbulbStatus(isOn);
-  };
-
-  const formatChartTime = (timestamp) => {
-    if (!timestamp) return '';
-    const date = new Date(timestamp);
-    return date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
   };
 
   const handleChartPauseResume = () => {
