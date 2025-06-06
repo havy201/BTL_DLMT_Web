@@ -260,8 +260,8 @@ function App() {
           font: {
             size: 12,
           },
-          maxRotation: 45,
-          minRotation: 45,
+          // maxRotation: 45,
+          // minRotation: 45,
           autoSkip: true,
           maxTicksLimit: 8
         },
