@@ -1,4 +1,4 @@
-import axiosClient from "./axiosClient";
+import axiosClient from "./Client";
 
 const ENDPOINTS = {
   TEMPERATURE: 'api/SensorLogs/Temperature',
@@ -21,10 +21,8 @@ class SensorApi {
     });
   }
 
-  async updateMotorStatus(value) {
-    return await axiosClient.post(ENDPOINTS.SENSOR_LOGS, value, {
-      headers: { 'Content-Type': 'application/json' }
-    });
+  async updateLightbulbStatus(value) {
+    return await axiosClient.post(ENDPOINTS.SENSOR_LOGS, { value });
   }
 }
 

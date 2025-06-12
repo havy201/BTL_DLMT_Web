@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 import { ClipLoader } from 'react-spinners';
-import getDataApi from './api/getDataApi';
+import getDataApi from './api/getFarmData';
 import { Chart as ChartJs } from 'chart.js/auto';
 import { Line } from 'react-chartjs-2'
-import './App.css'
+import './Farm.css'
 
 const TEMPERATURE_THRESHOLD = 36; // Ngưỡng nhiệt độ để tự động bật đèn
 
@@ -376,7 +376,7 @@ function App() {
             <div className="header">
               <div className="date-location">
                 <div className="location">
-                  <span>Nông trại khoai tây</span>
+                  <span>Nông trại cà chua</span>
                 </div>
                 <div className="date-time">
                   <span>{formatDateVN(currentTime)}</span>
